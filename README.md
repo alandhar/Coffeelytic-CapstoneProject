@@ -9,6 +9,23 @@
 - `ml` → cabang kerja tim machine learning
 - `fe/form-input`, `be/api-product`, `ml/kmeans` → cabang kerja spesifik tiap fitur
 
+```
+main
+  │
+  └─── dev
+        ├─── fe                          ← (Branch utama Frontend)
+        │     ├─── fe/form-input         ← (Fitur: Form input produk)
+        │     └─── fe/dashboard-ui       ← (Fitur: UI dashboard)
+        │
+        ├─── be                          ← (Branch utama Backend)
+        │     ├─── be/api-product        ← (Fitur: API produk)
+        │     └─── be/api-feedback       ← (Fitur: API feedback)
+        │
+        └─── ml                          ← (Branch utama Machine Learning)
+              ├─── ml/kmeans             ← (Fitur: Model klasterisasi)
+              └─── ml/sentiment-model    ← (Fitur: Sentiment analysis)
+```
+
 > [!NOTE]
 > Branch fe, be, dan ml adalah induk untuk masing-masing role.
 >
@@ -67,7 +84,7 @@ git push -u origin fe/form-input
 - `be/api-product → be`
 - `ml/kmeans → ml`
 
-# Cara Mengecek dan Mengambil Update Terbaru
+## Cara Mengecek dan Mengambil Update Terbaru
 
 Sebelum memulai atau melanjutkan kerja, selalu pastikan kamu bekerja di versi terbaru dari branch yang kamu gunakan.
 
