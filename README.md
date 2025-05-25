@@ -45,11 +45,15 @@ cd Coffeelytic-CapstoneProject
 
 3. Buat branch kerja untuk fitur
 
+Contoh:
+
 ```
 git checkout -b fe/form-input
 ```
 
 3. Kerjakan tugas → commit → push
+
+Contoh:
 
 ```
 git add .
@@ -63,8 +67,24 @@ git push -u origin fe/form-input
 - `be/api-product → be`
 - `ml/kmeans → ml`
 
+# Cara Mengecek dan Mengambil Update Terbaru
+
+Sebelum memulai atau melanjutkan kerja, selalu pastikan kamu bekerja di versi terbaru dari branch yang kamu gunakan.
+
+1. Cek Update Semua Branch dari Remote
+
+```
+git fetch
+```
+
+2. Ambil Update Terbaru di Branch Saat Ini
+```
+git pull origin <nama-branch>
+```
+
 > [!IMPORTANT]
 > - Selalu perhatikan branch saat akan mengubah file atau mengembangkan fitur.
 > - Selalu kerjakan dari branch role, bukan dev atau main
 > - Buat branch baru untuk mengembangkan fitur masing-masing role.
+> - Selalu `git fetch` lalu `git pull` sebelum kerja.
 > - Setiap menyelesaikan fitur selalu lakukan 'Pull Request'.
