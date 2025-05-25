@@ -4,24 +4,24 @@
 
 - `main` → versi stabil (untuk rilis)
 - `dev` → integrasi semua fitur
-- `fe` → cabang kerja tim frontend
-- `be` → cabang kerja tim backend
-- `ml` → cabang kerja tim machine learning
+- `fe-base` → cabang kerja tim frontend
+- `be-base` → cabang kerja tim backend
+- `ml-base` → cabang kerja tim machine learning
 - `fe/form-input`, `be/api-product`, `ml/kmeans` → cabang kerja spesifik tiap fitur
 
 ```
 main
   │
   └─── dev
-        ├─── fe                          ← (Branch utama Frontend)
+        ├─── fe-base                     ← (Branch utama Frontend)
         │     ├─── fe/form-input         ← (Fitur: Form input produk)
         │     └─── fe/dashboard-ui       ← (Fitur: UI dashboard)
         │
-        ├─── be                          ← (Branch utama Backend)
+        ├─── be-base                     ← (Branch utama Backend)
         │     ├─── be/api-product        ← (Fitur: API produk)
         │     └─── be/api-feedback       ← (Fitur: API feedback)
         │
-        └─── ml                          ← (Branch utama Machine Learning)
+        └─── ml-base                     ← (Branch utama Machine Learning)
               ├─── ml/kmeans             ← (Fitur: Model klasterisasi)
               └─── ml/sentiment-model    ← (Fitur: Sentiment analysis)
 ```
@@ -43,20 +43,20 @@ cd Coffeelytic-CapstoneProject
 2. Checkout ke branch role
     - Frontend Developer
     ```
-    git checkout fe
-    git pull origin fe
+    git checkout fe-base
+    git pull origin fe-base
     ```
 
     - Backend Developer
     ```
-    git checkout be
-    git pull origin be
+    git checkout be-base
+    git pull origin be-base
     ```
 
     - Machine Learning Engineer
     ```
-    git checkout ml
-    git pull origin ml
+    git checkout ml-base
+    git pull origin ml-base
     ```
 
 
@@ -80,9 +80,9 @@ git push -u origin fe/form-input
 
 4. Ajukan Pull Request ke branch utama role
 
-- `fe/form-input → fe`
-- `be/api-product → be`
-- `ml/kmeans → ml`
+- `fe/form-input → fe-base`
+- `be/api-product → be-base`
+- `ml/kmeans → ml-base`
 
 ## Cara Mengecek dan Mengambil Update Terbaru
 
