@@ -2,12 +2,12 @@
 
 ## Struktur Branch:
 
-`main` → versi stabil (untuk rilis)
-`dev` → integrasi semua fitur
-`fe` → cabang kerja tim frontend
-`be` → cabang kerja tim backend
-`ml` → cabang kerja tim machine learning
-`fe/form-input`, `be/api-product`, `ml/kmeans` → cabang kerja spesifik tiap fitur
+- `main` → versi stabil (untuk rilis)
+- `dev` → integrasi semua fitur
+- `fe` → cabang kerja tim frontend
+- `be` → cabang kerja tim backend
+- `ml` → cabang kerja tim machine learning
+- `fe/form-input`, `be/api-product`, `ml/kmeans` → cabang kerja spesifik tiap fitur
 
 > [!NOTE]
 > Branch fe, be, dan ml adalah induk untuk masing-masing role.
