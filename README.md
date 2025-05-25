@@ -11,6 +11,7 @@
 
 > [!NOTE]
 > Branch fe, be, dan ml adalah induk untuk masing-masing role.
+
 > Semua fitur dikembangkan di cabang baru yang berasal dari role masing-masing.
 
 ## Cara Kerja Tim
@@ -44,7 +45,9 @@ cd Coffeelytic-CapstoneProject
 
 3. Buat branch kerja untuk fitur
 
-`git checkout -b fe/form-input`
+```
+git checkout -b fe/form-input
+```
 
 3. Kerjakan tugas → commit → push
 
