@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffeelytic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+   <!-- HEADER -->
+  <header class="flex justify-between items-center p-4 bg-black">
+    <div class="flex items-center gap-2">
+      <img src="/coffelytic-app/frontend/assets/images/icons/Coffeeliytics Text Putih 1.svg" class="h-8" alt="Coffeelytic Logo">
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-white">
+      <a href="#">Beans</a>
+      <a href="#">Taste Note</a>
+      <a href="#">Origin</a>
+      <a href="#">Metode</a>
+    </nav>
+    <div id="authArea" class="flex gap-3 items-center"></div>
+    <script src="./js/auth.js"></script>
+  </header>
+
+  <!-- HERO -->
+    <section class="relative bg-cover bg-center py-12 px-8 flex justify-between items-center gap-8"
+            style="background-image: url('/coffelytic-app/frontend/assets/images/banner/coffee-5963334_1280\ 1.png'); min-height: 400px;">
+
+      <!-- KIRI: Hero --> 
+      <div class="max-w-xl text-white">
+        <h1 class="text-4xl font-extrabold text-yellow-400 mb-4">Kenali Karakter Kopi Anda</h1>
+        <p class="text-sm leading-relaxed mb-6">
+          Setiap biji kopi menyimpan cerita dan potensi rasa yang unik. Di Coffeelytic, kami tidak hanya menjual biji kopi,
+          kami mengajak Anda bertualang. Jelajahi peta rasa global, pahami dinamika tren, dan kurasi pengalaman minum kopi
+          yang paling personal untuk Anda.
+        </p>
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-5 py-2 rounded shadow-md">
+          Explore Now
+        </button>
+      </div>
+
+      <!-- KANAN: Mask Group -->
+      <div class="bg-[#5c7d3a] text-white rounded-xl shadow-xl w-[420px] h-[220px] overflow-hidden flex">
+        <img src="/coffelytic-app/frontend/assets/images/banner/Gayo-Bali-Java-Natural 1.png"
+            alt="Gayo Bali Java"
+            class="w-1/2 h-full object-cover" />
+        <div class="w-1/2 p-4 flex flex-col justify-between">
+          <div>
+            <h3 class="text-md font-bold mb-2">Bali Natural Green Coffee Beans</h3>
+            <p class="text-xs leading-snug">
+              Jelajahi cita rasa eksotis Bali! Biji pilihan untuk sangrai dengan hasil akhir fruity, manis, dan memikat.
+            </p>
+          </div>
+          <!-- Dot Navigator -->
+          <div class="flex gap-1 mt-3">
+            <div class="w-2 h-2 bg-white opacity-50 rounded-full"></div>
+            <div class="w-2 h-2 bg-white opacity-50 rounded-full"></div>
+            <div class="w-2 h-2 bg-white opacity-50 rounded-full"></div>
+            <div class="w-2 h-2 bg-white opacity-100 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  <!-- PRODUCT TERPOPULER -->
+    <section class="bg-[#2e2a1b] py-10 px-6">
+      <h2 class="text-center text-xl font-bold text-yellow-400 mb-6">Product Terpopuler</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center">
+        
+        <!-- Produk 1 -->
+        <div class="bg-white text-black p-4 rounded-xl shadow-md">
+          <div class="relative">
+            <img src="./assets/images/beans/Wanagiri-Bali-Coffee-Products-1024x1024.png 1.png" alt="Kopi Wanagiri Bali" class="w-full h-40 object-cover rounded">
+            <button class="absolute top-2 right-2 text-red-500 text-xl">❤️</button>
+          </div>
+          <h3 class="font-semibold text-sm mt-3">Kopi Wanagiri Bali</h3>
+          <p class="text-yellow-600 font-semibold text-sm">Rp76.670</p>
+          <p class="text-xs text-gray-700">200gr</p>
+          <div class="flex items-center text-yellow-500 text-sm mt-1">
+            ★★★★☆ <span class="ml-1 text-gray-500">(456)</span>
+          </div>
+          <button class="mt-2 bg-yellow-500 hover:bg-yellow-600 w-full py-1 rounded text-white flex items-center justify-center gap-2">
+            🛒 Tambah
+          </button>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="bg-white text-black p-4 rounded-xl shadow-md">
+          <div class="relative">
+            <img src="./assets/images/beans/toraja.png" alt="Kopi Toraja" class="w-full h-40 object-cover rounded">
+            <button class="absolute top-2 right-2 text-gray-400 text-xl">🤍</button>
+          </div>
+          <h3 class="font-semibold text-sm mt-3">Kopi Toraja</h3>
+          <p class="text-yellow-600 font-semibold text-sm">Rp86.270</p>
+          <p class="text-xs text-gray-700">200gr</p>
+          <div class="flex items-center text-yellow-500 text-sm mt-1">
+            ★★★☆☆ <span class="ml-1 text-gray-500">(460)</span>
+          </div>
+          <button class="mt-2 bg-yellow-500 hover:bg-yellow-600 w-full py-1 rounded text-white flex items-center justify-center gap-2">
+            🛒 Tambah
+          </button>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="bg-white text-black p-4 rounded-xl shadow-md">
+          <div class="relative">
+            <img src="./assets/images/beans/aceh-gayo.png" alt="Kopi Aceh Gayo" class="w-full h-40 object-cover rounded">
+            <button class="absolute top-2 right-2 text-gray-400 text-xl">🤍</button>
+          </div>
+          <h3 class="font-semibold text-sm mt-3">Kopi Aceh Gayo</h3>
+          <p class="text-yellow-600 font-semibold text-sm">Rp54.550</p>
+          <p class="text-xs text-gray-700">100gr</p>
+          <div class="flex items-center text-yellow-500 text-sm mt-1">
+            ★★★★☆ <span class="ml-1 text-gray-500">(396)</span>
+          </div>
+          <button class="mt-2 bg-yellow-500 hover:bg-yellow-600 w-full py-1 rounded text-white flex items-center justify-center gap-2">
+            🛒 Tambah
+          </button>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="bg-white text-black p-4 rounded-xl shadow-md">
+          <div class="relative">
+            <img src="./assets/images/beans/Jamiaki-Tenjo-Bumikopi-1 1.png" alt="Kopi Arabika Tenjo" class="w-full h-40 object-cover rounded">
+            <button class="absolute top-2 right-2 text-gray-400 text-xl">🤍</button>
+          </div>
+          <h3 class="font-semibold text-sm mt-3">Kopi Arabika Tenjo</h3>
+          <p class="text-yellow-600 font-semibold text-sm">Rp89.670</p>
+          <p class="text-xs text-gray-700">200gr</p>
+          <div class="flex items-center text-yellow-500 text-sm mt-1">
+            ★★★★☆ <span class="ml-1 text-gray-500">(385)</span>
+          </div>
+          <button class="mt-2 bg-yellow-500 hover:bg-yellow-600 w-full py-1 rounded text-white flex items-center justify-center gap-2">
+            🛒 Tambah
+          </button>
+        </div>
+
+        <!-- Produk 5 -->
+        <div class="bg-white text-black p-4 rounded-xl shadow-md">
+          <div class="relative">
+            <img src="./assets/images/beans/araboca-robusta-blend-200g.png 1.png" alt="Kopi Banyuwatis" class="w-full h-40 object-cover rounded">
+            <button class="absolute top-2 right-2 text-red-500 text-xl">❤️</button>
+          </div>
+          <h3 class="font-semibold text-sm mt-3">Kopi Banyuwatis</h3>
+          <p class="text-yellow-600 font-semibold text-sm">Rp63.400</p>
+          <p class="text-xs text-gray-700">200gr</p>
+          <div class="flex items-center text-yellow-500 text-sm mt-1">
+            ★★★★☆ <span class="ml-1 text-gray-500">(456)</span>
+          </div>
+          <button class="mt-2 bg-yellow-500 hover:bg-yellow-600 w-full py-1 rounded text-white flex items-center justify-center gap-2">
+            🛒 Tambah
+          </button>
+        </div>
+
+      </div>
+    </section>
+    <script src="./js/auth.js"></script>
+</body>
+</html>

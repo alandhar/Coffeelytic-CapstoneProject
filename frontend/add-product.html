@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <script src="js/popup.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+</head>
+<body class="p-6">
+    <h1 class="text-2xl font-bold mb-4">Tambah Produk</h1>
+    <form id="productForm" class="space-y-4">
+        <input type="text" name="name" placeholder="Nama Produk" class="border p-2 w-full" required>
+        <input type="text" name="brand" placeholder="Brand" class="border p-2 w-full" required>
+        <input type="text" name="taste_note" placeholder="Taste Note" class="border p-2 w-full">
+        <input type="text" name="origin" placeholder="Origin" class="border p-2 w-full">
+        <input type="number" name="weight" placeholder="Berat (gram)" class="border p-2 w-full">
+        <input type="number" name="price" placeholder="Harga (Rp)" class="border p-2 w-full">
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Simpan</button>
+        <input type="text" name="tags" placeholder="Tag (pisahkan dengan koma, contoh: Fruity,Bold)" class="border p-2 w-full">
+    </form>
+    <script src="js/formHandlerUpload.js"></script>
+
+  <!-- Popup -->
+    <div id="popup" class="hidden mt-4 p-4 rounded bg-blue-100 text-blue-700"></div>
+    <script>
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user || user.role !== "seller") {
+            alert("Anda tidak memiliki akses ke halaman ini.");
+            window.location.href = "login.html";
+        }
+    </script>
+
+
+
+</body>
+</html>
