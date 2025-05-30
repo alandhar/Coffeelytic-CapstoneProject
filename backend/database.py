@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 
 db = SQLAlchemy()
@@ -11,8 +12,18 @@ class User(db.Model):
 
     id = db.Column(db.String, primary_key=True, default=generate_uuid)
     name = db.Column(db.String, nullable=False)
+    username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String, unique=True, nullable=False)
-    products = db.relationship("Product", backref="user", lazy=True)
+    password_hash = db.Column(db.String, nullable=False)
+
+    # Relasi: satu user bisa punya banyak produk
+    products = db.relationship('Product', backref='user', cascade="all, delete-orphan")
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+    
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 class Product(db.Model):
     __tablename__ = "products"

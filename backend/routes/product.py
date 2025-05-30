@@ -1,42 +1,40 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
+from werkzeug.utils import secure_filename
 from database import db, Product, User
+import os
 import uuid
 
 product_bp = Blueprint('product_bp', __name__)
-user_bp = Blueprint('user_bp', __name__)
-
-@user_bp.route('/users', methods=['POST'])
-def create_user():
-    data = request.json
-    if not data.get('name') or not data.get('email'):
-        return jsonify({"error": "Name and email are required"}), 400
-
-    new_user = User(
-        id=str(uuid.uuid4()),
-        name=data['name'],
-        email=data['email']
-    )
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify({"message": "User created", "id": new_user.id}), 201
 
 @product_bp.route('/products', methods=['POST'])
 def add_product():
-    data = request.json
+    data = request.form
+    image_file = request.files.get('product_image')
 
+    # Validasi field wajib
     required_fields = [
         'user_id', 'name', 'origin', 'bean_type', 'post_harvest_method',
         'flavor_profile', 'acidity_level', 'bitterness_level',
-        'sweetness_level', 'recommended_brew_method', 'product_image',
-        'weight', 'price'
+        'sweetness_level', 'recommended_brew_method', 'weight', 'price'
     ]
-
     missing = [field for field in required_fields if not data.get(field)]
-    if missing:
-        return jsonify({"error": f"Fields required and cannot be empty: {', '.join(missing)}"}), 400
+    if missing or not image_file:
+        return jsonify({"error": f"Fields required: {', '.join(missing + (['product_image'] if not image_file else []))}"}), 400
 
+    # Validasi user_id
+    user = User.query.filter_by(id=data['user_id']).first()
+    if not user:
+        return jsonify({"error": "Invalid user_id"}), 400
+
+    # Simpan gambar
+    filename = secure_filename(image_file.filename)
+    image_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+    image_file.save(image_path)
+
+    # Simpan ke DB
     try:
         product = Product(
+            id=str(uuid.uuid4()),
             user_id=data['user_id'],
             name=data['name'],
             origin=data['origin'],
@@ -47,9 +45,9 @@ def add_product():
             bitterness_level=data['bitterness_level'],
             sweetness_level=data['sweetness_level'],
             recommended_brew_method=data['recommended_brew_method'],
-            product_image=data['product_image'],
-            weight=data['weight'],
-            price=data['price']
+            product_image=filename,
+            weight=int(data['weight']),
+            price=int(data['price'])
         )
         db.session.add(product)
         db.session.commit()
