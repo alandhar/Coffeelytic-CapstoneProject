@@ -10,11 +10,15 @@
     <img src="./assets/images/icons/Coffeeliytics Text Putih 1.svg" alt="Coffeelytic Logo" class="w-60 mb-4">
     <p class="text-center text-lg">The Art of Coffee, The Science of Choice.</p>
   </div>
-  <div class="w-1/2 bg-[#1f1f11] text-white p-10 flex flex-col justify-center">
+  <div class="w-1/2 text-white p-10 flex flex-col justify-center" style="background-color: #5d6352;">
     <div class="max-w-sm w-full mx-auto">
       <h2 class="text-2xl font-bold text-yellow-400 mb-8 text-center">REGISTER</h2>
       <form id="registerForm" class="space-y-5">
-        <input type="text" name="full_name" placeholder="Nama lengkap" required class="w-full rounded px-4 py-2 text-black border border-gray-300 outline-none" />
+        <div>
+          <label for="name" class="block text-base font-semibold text--700">Full Name</label>
+          <input type="text" id="name" name="name" required
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black" placeholder="Nama Lengkap">
+        </div>
         <input type="email" name="email" placeholder="Email" required class="w-full rounded px-4 py-2 text-black border border-gray-300 outline-none" />
         <input type="text" name="username" placeholder="Username" required class="w-full rounded px-4 py-2 text-black border border-gray-300 outline-none" />
         <input type="password" name="password" placeholder="Password" required class="w-full rounded px-4 py-2 text-black border border-gray-300 outline-none" />
